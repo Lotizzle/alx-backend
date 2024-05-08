@@ -12,6 +12,10 @@ class BasicCache(BaseCaching):
     This class acts as a caching system
     """
 
+    def __init__(self):
+        """Intializes"""
+        super().__init__()
+
     def put(self, key, item):
         """
         This method assigns an item to the given key
