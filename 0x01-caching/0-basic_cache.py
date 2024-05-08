@@ -4,7 +4,7 @@ This module contains the class BasicCache that inherits
 from BaseCaching and is a caching system.
 """
 
-BaseCaching = __import__('base_caching').BaseCaching
+from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
@@ -21,7 +21,7 @@ class BasicCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """Returns the value linked to key in self.cache_data"""
-        if key is None or key not in self.cache_data:
-            return None
-        return self.cache_data[key]
+        """ Get an item by key """
+        if key is not None and key in self.cache_data:
+            return self.cache_data[key]
+        return None
