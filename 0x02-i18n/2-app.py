@@ -26,6 +26,7 @@ app.config.from_object(Config)
 @babel.localeselector
 def get_locale():
     """ Determines the best match using locale and config """
+
     user_preferred_languages = [x.replace('-', '_')
                                 for x in getdefaultlocale()]
     if user_preferred_language[0] in app.config['LANGUAGES']:
