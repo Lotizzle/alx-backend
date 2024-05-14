@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-This module contains a flask app translates text into
+This module contains a flask app that translates text into
 a users preferred language
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 from locale import getdefaultlocale
 
 app = Flask(__name__)
