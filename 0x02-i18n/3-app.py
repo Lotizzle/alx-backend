@@ -14,7 +14,15 @@ app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 
 @app.route('/')
 def index():
-    """ Renders 3-index template """
+    """
+    Route to render the home page.
+
+    This function renders the home page template, which includes
+    translated strings using the gettext function.
+
+    Returns:
+        str: Rendered HTML template for the home page.
+    """
     return render_template('3-index.html')
 
 
