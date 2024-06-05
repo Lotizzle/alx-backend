@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 4-app module
+Flask application to select locale
 """
 
 from flask import Flask, render_template, request
@@ -14,6 +15,7 @@ app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'fr']
 
+
 @babel.localeselector
 def get_locale():
     """
@@ -23,7 +25,10 @@ def get_locale():
     locale = request.args.get('locale')
     if locale in app.config['BABEL_SUPPORTED_LOCALES']:
         return locale
-    return request.accept_languages.best_match(app.config['BABEL_SUPPORTED_LOCALES'])
+    return request.accept_languages.best_match(
+        app.config['BABEL_SUPPORTED_LOCALES']
+    )
+
 
 @app.route('/')
 def index():
@@ -37,6 +42,7 @@ def index():
         str: Rendered HTML template for the home page.
     """
     return render_template('4-index.html')
+
 
 if __name__ == "__main__":
     app.run(port=5000)
