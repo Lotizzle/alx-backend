@@ -17,5 +17,6 @@ def index():
     """ Renders 3-index template """
     return render_template('3-index.html')
 
+
 if __name__ == "__main__":
     app.run(port=1245)
