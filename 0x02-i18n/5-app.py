@@ -5,22 +5,6 @@ Flask application module for internationalization with user emulation.
 This module sets up a Flask application with Babel for internationalization
 (i18n) support. It includes locale selection based on URL parameters and
 browser preferences, and user emulation via URL parameters.
-
-Attributes:
-    app (Flask): The Flask application instance.
-    babel (Babel): The Babel instance for i18n support.
-    users (dict): Mocked user database.
-
-Functions:
-    get_locale: Determines the best match for supported locales based on
-    URL parameters and browser preferences.
-
-    get_user: Retrieves a user dictionary based on the user ID provided
-    in the URL parameters.
-
-    before_request: Sets the current user as a global variable.
-
-    index: Renders the home page with localized content and user information.
 """
 
 from flask import Flask, render_template, request, g
@@ -115,4 +99,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(port=1245)
+    app.run(port=5000)
